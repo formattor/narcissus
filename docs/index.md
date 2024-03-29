@@ -4,9 +4,12 @@ layout: home
 
 hero:
   name: "Narcissus"
-  text: "Note"
-  tagline: My great project tagline
+  text: "岛屿"
+  tagline: "\"朝闻道，夕死可矣\""
   actions:
+    - theme: brand
+      text: 一分钟建站
+      link: /build-website
     - theme: brand
       text: Markdown Examples
       link: /markdown-examples
