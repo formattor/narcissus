@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t}from"./chunks/framework.DBWjRj0m.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"front-end/aurelia.md","filePath":"front-end/aurelia.md"}'),r={name:"front-end/aurelia.md"};function n(o,s,c,i,d,f){return t(),a("div")}const _=e(r,[["render",n]]);export{p as __pageData,_ as default};

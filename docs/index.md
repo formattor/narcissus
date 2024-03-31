@@ -6,6 +6,9 @@ hero:
   name: "Narcissus"
   text: "岛屿"
   tagline: "\"朝闻道，夕死可矣\""
+  image:
+    src: /shi.png
+    alt: 诶嘿
   actions:
     - theme: brand
       text: 一分钟建站
