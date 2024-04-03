@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as r}from"./chunks/framework.DBWjRj0m.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"front-end/react.md","filePath":"front-end/react.md"}'),a={name:"front-end/react.md"};function n(o,c,s,d,f,p){return r(),t("div")}const m=e(a,[["render",n]]);export{i as __pageData,m as default};
