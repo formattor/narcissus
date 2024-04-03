@@ -4,6 +4,7 @@ export default [
         items: [
             {
                 text: 'HTML',
+                collapsed: true,
                 items: [
                     {
                         text: '基础',

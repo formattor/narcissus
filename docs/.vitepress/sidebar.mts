@@ -2,6 +2,7 @@ export default {
     '/front-end/html/': [
         {
             text: 'HTML',
+            collapsed: true,
             items: [
                 {
                     text: 'HTML基础',
