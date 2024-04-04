@@ -5,11 +5,11 @@
 
 web发展历史
 
-<image src="./frontend/micro1.png" alt="web history" />
+<image src="./resource/micro1.png" alt="web history" />
 
 微服务的思想诞生了微前端
 
-<image src="./frontend/micro2.png" alt="web history" />
+<image src="./resource/micro2.png" alt="web history" />
 
 ## 微前端要解决的问题
 
