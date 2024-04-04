@@ -21,7 +21,8 @@ export default defineConfig({
     sidebar,
 
     aside: true,
-    outline: 'deep',
+    // outline: 'deep',
+    outline: [1, 3],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/formattor' }
@@ -33,9 +34,8 @@ export default defineConfig({
       copyright: 'yushi © 2024-present'
     },
 
-    // todo
     editLink: {
-      pattern: 'https://github.com/formattor/narcissus/docs/:path',
+      pattern: 'https://github.com/formattor/narcissus/tree/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
 
@@ -55,6 +55,6 @@ export default defineConfig({
     // todo
     returnToTopLabel: '往上',
 
-    externalLinkIcon: true,
+    // externalLinkIcon: true,
   }
 })
