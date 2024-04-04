@@ -42,6 +42,15 @@ base: "/test/"
 
 6. 连接本地与远程仓库
 
+```
+git init
+```
+
+创建.gitignore文件
+```
+node_modules/
+```
+
 7. page页面配置
 
 <image src="../resource/vitepress1.png" />
