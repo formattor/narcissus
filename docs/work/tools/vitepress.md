@@ -48,6 +48,14 @@ base: "/test/"
 
 8. Action页面创建deploy.yml文件
 
+::: tip 注意事项
+path路径填写docs
+
+node版本与本地一致
+
+npm版本与本地一致
+:::
+
 ::: details deploy.yml
 
 ``` yml
