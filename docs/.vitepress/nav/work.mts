@@ -3,12 +3,20 @@ export default {
     items: [
         {
             text: 'Bug',
+            link: '/work/bug'
+        },
+        {
+            text: 'Efficiency',
+            link: '/work/efficiency'
+        },
+        {
+            text: 'Tools',
             items: [
                 {
-                    text: 'Bug',
-                    link: '/work/bug'
+                    text: 'VitePress',
+                    link: '/work/tools/vitepress'
                 }
             ]
-        }
+        },
     ]
 }

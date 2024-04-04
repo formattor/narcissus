@@ -3,16 +3,7 @@ export default {
     items: [
         {
             text: 'Bootstrap',
-            items: [
-                {
-                    text: '三级html',
-                    link: '/front-end/html'
-                },
-                {
-                    text: '三级css',
-                    link: '/front-end/css'
-                }
-            ]
+            link: '/back-end/bootstrap'
         }
     ]
 }
