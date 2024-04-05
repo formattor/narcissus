@@ -53,7 +53,7 @@ node_modules/
 
 7. page页面配置
 
-<image src="/narcissus/vitepress1.png" />
+<!-- <image src="/narcissus/vitepress1.png" /> -->
 
 8. Action页面创建deploy.yml文件
 
