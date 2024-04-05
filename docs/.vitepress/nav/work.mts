@@ -1,14 +1,8 @@
 export default {
     text: '工作',
     items: [
-        {
-            text: 'Bug',
-            link: '/work/bug'
-        },
-        {
-            text: 'Efficiency',
-            link: '/work/efficiency'
-        },
+        { text: 'Bug', link: '/work/bug' },
+        { text: 'Efficiency', link: '/work/efficiency' },
         {
             text: 'Tools',
             items: [
@@ -17,5 +11,6 @@ export default {
                 { text: 'Sql', link: '/work/tools/sql' },
             ]
         },
+        { text: 'Team', link: '/work/team' },
     ]
 }

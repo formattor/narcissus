@@ -343,6 +343,229 @@ export async function mount(props: any) {
 }
 ```
 
+## 原理
+
+#### 父应用使用
+
+``` js
+const apps = [
+  {
+    name: "sub-react", 
+    entry: '//localhost:3001',
+    activeRule: "/sub-react",
+    container: "#sub-app"
+  },
+  {
+    name: "sub-vue",
+    entry: '//localhost:3002',
+    activeRule: "/sub-vue",
+    container: "#sub-app"
+  }
+]
+
+registerMicroApps(apps)
+
+start()
+```
+
+#### 注册微应用
+
+``` js
+// index.js
+let _apps = [];
+
+export const getApps = () => _apps;
+
+// 01.register micro apps
+export const registerMicroApps = (apps, lifestyles) => {
+    _apps = apps;
+}
+```
+
+#### 启动微应用
+
+1. 启动
+
+``` js
+// index.js
+// 01.start app
+export const start = () => {
+    rewriteRouter();
+    handleRouter();
+}
+```
+
+2. 监听路由变化
+
+``` js
+// rewrite-router.js
+// 02.listen router changed
+export const rewriteRouter = () => {
+    window.addEventListener('popstate', (e) => {
+        handleRouter();
+    })
+
+    const rawPushState = window.history.pushState;
+    window.history.pushState = (...args) => {
+        prevRoute = window.location.pathname;
+        rawPushState.apply(window.history, args)
+        nextRoute = window.location.pathname;
+        handleRouter();
+    }
+
+    const rawReplaceState = window.history.replaceState;
+    window.history.replaceState = (...args) => {
+        prevRoute = window.location.pathname;
+        rawReplaceState.apply(window.history, args)
+        nextRoute = window.location.pathname;
+        handleRouter();
+    }
+}
+```
+
+::: tip 监听路由变化
+
++ hashChange - hash模式
+
++ popstate - history模式
+
+    + popstate: history.go history.back history.forward
+
+    + pushState: 添加路由
+
+    + replaceState: 替换路由
+
+:::
+
+3. 获取子应用资源
+
+::: details 获取子应用资源
+
+3.1 路由资源获取
+
+``` js
+// handle-router.js
+export const handleRouter = async () => {
+    let apps = getApps()
+
+    // 01.get prev path
+    const prevApp = apps.find(item => getPrevRoute().startsWith(item.activeRule));
+    // 02.get current path
+    const currentApp = apps.find(item => getNextRoute().startsWith(item.activeRule));
+
+    if (prevApp) {
+        // unmout the prev app if exist
+        await unmount(prevApp);
+    }
+
+    if (!currentApp) {
+        return;
+    }
+
+    // 03. get micro app DOM,scripts,script function 
+    const { template, getExternalScripts, execScripts } = await importHTML(currentApp.entry);
+    let container = document.querySelector(currentApp.container);
+    console.log(container);
+    // 04. append micro app DOM to container
+    container.appendChild(template);
+}
+```
+
+3.2 获取路由资源
+
+``` js
+// handle-router.js
+export const importHTML = async (url) => {
+    // 07.get sub reource by fetch
+    let html = await fetchResource(url);
+    const template = document.createElement('div');
+    template.innerHTML = html;
+
+    const scripts = document.querySelectorAll('script');
+    console.log('08.get all sub js resources', scripts);
+
+    function getExternalScripts() {
+        return Promise.all(Array.from(scripts).map(script => {
+            const src = script.getAttribute('src');
+            if (!src) {
+                return Promise.resolve(script.innerHTML)
+            } else {
+                return fetchResource(
+                    src.startsWith('http') ? src : `${url}${src}`
+                );
+            }
+        }))
+    }
+
+    async function execScripts() {
+        const scripts = await getExternalScripts()
+
+        const module = { exports: {} }
+        const exports = module.exports;
+
+        scripts.forEach(code => {
+            eval(code);
+        })
+
+        return module.exports;
+    }
+
+    return {
+        template,
+        getExternalScripts,
+        execScripts
+    }
+}
+```
+
+3.3 fetch funtion
+
+``` js
+// fetch-resource.js
+export const fetchResource = url => fetch(url).then(res=> res.text())
+```
+
+:::
+
+4. 执行子应用scripts
+
+``` js
+// handle-router.js
+export const handleRouter = async () => {
+
+    ...
+
+    // 添加该属性，判断子应用是否被qiankun加载
+    window.__POWERED_BY_QIANKUN__ = true;
+
+    const appExports = await execScripts();
+
+    currentApp.bootstrap = appExports.bootstrap;
+    currentApp.mount = appExports.mount;
+    currentApp.unmount = appExports.unmount;
+
+    await bootstrap(currentApp)
+    await mount(currentApp)
+}
+
+async function bootstrap(app) {
+    app.bootstrap && (await app.bootstrap())
+}
+
+async function mount(app) {
+    app.mount && (await app.mount({
+        container: document.querySelector(app.container)
+    }))
+}
+
+async function unmount(app) {
+    app.unmount && (await app.unmount({
+        container: document.querySelector(app.container)
+    }))
+}
+
+```
+
 # wujie
 
 ## 应用通信

@@ -4,6 +4,7 @@ import sidebar from './sidebar.mts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'zh-CN',
   title: "Narcissus",
   description: "Note",
   base: "/narcissus/",

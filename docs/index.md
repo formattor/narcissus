@@ -11,9 +11,6 @@ hero:
     alt: 诶嘿
   actions:
     - theme: brand
-      text: 一分钟建站
-      link: /build-website
-    - theme: brand
       text: Markdown Examples
       link: /markdown-examples
     - theme: alt
@@ -21,11 +18,11 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 前后端
+    details: 使劲儿卷，卷着忘着
+  - title: 日常
+    details: 我没有日常
+  - title: 工作
+    details: 嗯
 ---
 
