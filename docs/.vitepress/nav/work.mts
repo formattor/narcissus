@@ -12,10 +12,9 @@ export default {
         {
             text: 'Tools',
             items: [
-                {
-                    text: 'VitePress',
-                    link: '/work/tools/vitepress'
-                }
+                { text: 'VitePress', link: '/work/tools/vitepress' },
+                { text: 'Git', link: '/work/tools/git' },
+                { text: 'Sql', link: '/work/tools/sql' },
             ]
         },
     ]

@@ -1,1 +1,8 @@
-node_modules/
+# annotation
+/node_modules
+
+*.log
+
+dist/
+
+cache/
