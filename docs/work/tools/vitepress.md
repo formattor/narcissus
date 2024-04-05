@@ -36,7 +36,7 @@ base: "/test/"
 
 ### 远程仓库与部署
 
-5. 创建远程仓库test
+5. 创建远程public仓库test
 
 和base文件名称保持一致
 
@@ -53,7 +53,7 @@ node_modules/
 
 7. page页面配置
 
-<!-- <image src="/narcissus/vitepress1.png" /> -->
+<image src="/narcissus/vitepress1.png" />
 
 8. Action页面创建deploy.yml文件
 
