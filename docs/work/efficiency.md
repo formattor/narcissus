@@ -20,3 +20,9 @@
 |快捷键|功能|状况|
 |--|--|--|
 |`shift + ctrl + N`|新建文件夹|文件夹下|
+
+# 效率
+
+1. 提升chrome下载速度
+
+chrome://flags -> parallel-downloading -> enable

@@ -4,6 +4,164 @@
 
 ## 配置
 
+::: tip
+
+配置静态资源
+
++ 放入public `<image src="/narcissus/vitepress1.png" />`
+
++ [外链静态资源](/daily/web)
+
+:::
+
+## 使用
+
+[详情](https://vitepress.dev/guide/markdown)
+
+### 表格
+
+| Left          |      Middle   |  right     |
+| ------------- | :-----------: | ---------: |
+| ------------- | :-----------: | ---------: |
+| Left          |      Middle   |  right     |
+
+### emoji
+
+:tada: - `:tada:`
+
+[emojy list](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.mjs)
+
+### 目录结构
+
+`[[toc]]`
+
+[[toc]]
+
+### Card
+
+::: info
+This is an info box. [info]
+:::
+
+::: tip
+This is a tip. [tip]
+:::
+
+::: warning
+This is a warning. [warning]
+:::
+
+::: danger
+This is a dangerous warning. [danger]
+:::
+
+::: details
+This is a details block. [details]
+:::
+
+### 行高亮
+      
+`js{4}`
+
+`// [!code highlight]`
+
+
+```js{4}
+export default {
+  data () {
+    return {
+      msg: 'Highlighted!'
+    }
+  }
+}
+```
+
+### 行聚焦
+
+::: tip
+
+在某一行上添加 `// [!code focus]` 注释将聚焦它并模糊代码的其他部分。
+
+此外，可以使用 `// [!code focus:<行数>]` 定义要聚焦的行数。
+
+:::
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Focused!' // [!code focus]
+    }
+  }
+}
+```
+
+### 行Diff
+
+在某一行添加 `// [!code --]` 或 `// [!code ++]` 注释将会为该行创建 diff，同时保留代码块的颜色。
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Removed' // [!code --]
+      msg: 'Added' // [!code ++]
+    }
+  }
+}
+```
+
+### 行高亮,行警告
+
+在某一行添加 `// [!code warning]` 或 // `[!code error]` 注释将会为该行相应的着色。
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Error', // [!code error]
+      msg: 'Warning' // [!code warning]
+    }
+  }
+}
+```
+
+### 行号
+
+```ts {1}
+// 默认禁用行号 ts {1}
+const line2 = 'This is line 2'
+const line3 = 'This is line 3'
+```
+
+```ts:line-numbers {1}
+// 启用行号 ts:line-numbers {1}
+const line2 = 'This is line 2'
+const line3 = 'This is line 3'
+```
+
+```ts:line-numbers=2 {1}
+// 行号已启用，并从 2 开始 ts:line-numbers=2 {1}
+const line3 = 'This is line 3'
+const line4 = 'This is line 4'
+```
+
+### 代码组
+
+`::: code-group`
+
+::: code-group
+
+```npm
+npm install vitepress
+```
+
+```pnpm
+pnpm install vitepress
+```
+
+:::
+
 ## 一分钟建站
 
 ### 本地搭建环境
@@ -53,7 +211,7 @@ node_modules/
 
 7. page页面配置
 
-<image src="/narcissus/vitepress1.png" />
+![vitepress1.png](https://img2.imgtp.com/2024/04/08/lAWMqdL8.png)
 
 8. Action页面创建deploy.yml文件
 

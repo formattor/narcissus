@@ -5,11 +5,11 @@
 
 web发展历史
 
-<image src="/narcissus/micro1.png" alt="web history" />
+![micro1.png](https://img2.imgtp.com/2024/04/08/onGfJhG1.png)
 
 微服务的思想诞生了微前端
 
-<image src="/narcissus/micro2.png" alt="web history" />
+![micro2.png](https://img2.imgtp.com/2024/04/08/N8cUNw8L.png)
 
 ## 微前端要解决的问题
 

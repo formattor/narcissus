@@ -32,7 +32,7 @@ export default {
             text: '网站',
             items: [
                 {
-                    text: '三级html',
+                    text: 'web',
                     link: '/daily/web'
                 }
             ]

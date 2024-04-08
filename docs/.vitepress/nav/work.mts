@@ -8,7 +8,7 @@ export default {
             items: [
                 { text: 'VitePress', link: '/work/tools/vitepress' },
                 { text: 'Git', link: '/work/tools/git' },
-                { text: 'Sql', link: '/work/tools/sql' },
+                { text: 'SQL', link: '/work/tools/sql' },
             ]
         },
         { text: 'Team', link: '/work/team' },
