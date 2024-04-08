@@ -4,6 +4,10 @@ export default {
         {
             text: 'Bootstrap',
             link: '/back-end/bootstrap'
+        },
+        {
+            text: 'EF6',
+            link: '/back-end/EF6'
         }
     ]
 }
