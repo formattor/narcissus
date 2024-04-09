@@ -47,6 +47,10 @@ export default {
             ]
         },
         {
+            text: 'Taro',
+            link: '/front-end/taro/taro'
+        },
+        {
             text: 'Micro frontend',
             link: '/front-end/micro-frontend'
         }

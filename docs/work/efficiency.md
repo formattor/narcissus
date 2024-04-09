@@ -26,3 +26,4 @@
 1. 提升chrome下载速度
 
 chrome://flags -> parallel-downloading -> enable
+edge://flags -> parallel-downloading -> enable
