@@ -26,4 +26,45 @@
 1. 提升chrome下载速度
 
 chrome://flags -> parallel-downloading -> enable
+
 edge://flags -> parallel-downloading -> enable
+
+# 软件
+
+|名称|功能|
+|--|--|
+|PotPlayer|视频播放器|
+|IDM|下载工具|
+|次元城动漫|动漫播放|
+|OBS Studio|录屏|
+|typora|markdown编辑器|
+|draw.io|画图|
+|火柴|搜索|
+|UTools|工具|
+|向日葵|远程|
+
+# 浏览器插件
+
+|名称|功能|
+|--|--|
+|Wappalyzer|识别网站所用技术|
+|Tampermonkey|脚本管理|
+|AIX智能下载器|下载媒体资源|
+|Simple Allow Copy|允许复制|
+|鼠标手势|鼠标手势|
+|Adblock Plus|屏蔽广告|
+|FeHelper|前端开发助手|
+
+# VS Code插件
+
+|名称|功能|用法|
+|--|--|--|
+|Error Lens|错误提示|
+|file-size|文件大小|right bottom corner|
+|Code Translate|翻译|hover|
+|GitHub Repositories|github仓库|
+|Live Server|html server|
+|Polacode-2022|截图|`ctrl + shift + p` |
+|TONGYI Lingma|AI code|
+|Image preview|图片预览|
+|Dracula Official|主题|

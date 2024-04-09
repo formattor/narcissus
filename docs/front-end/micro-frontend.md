@@ -2,7 +2,6 @@
 > Techniques, strategies and recipes for building a modern web app with multiple teams that can ship features independently.     
 [Micro-frontends.org](https://micro-frontends.org/)
 
-
 web发展历史
 
 ![micro1.png](https://img2.imgtp.com/2024/04/08/onGfJhG1.png)
