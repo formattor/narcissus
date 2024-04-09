@@ -25,6 +25,19 @@ export default {
             ]
         },
         {
+            text: 'JS',
+            items: [
+                {
+                    text: '事件循环',
+                    link: '/front-end/js/eventloop'
+                },
+                {
+                    text: '浏览器渲染原理',
+                    link: '/front-end/js/render'
+                }
+            ]
+        },
+        {
             text: 'Vue',
             items: [
                 {

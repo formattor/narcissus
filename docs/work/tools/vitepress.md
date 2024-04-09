@@ -152,11 +152,11 @@ const line4 = 'This is line 4'
 
 ::: code-group
 
-```npm
+``` cmd npm
 npm install vitepress
 ```
 
-```pnpm
+``` cmd pnpm
 pnpm install vitepress
 ```
 
