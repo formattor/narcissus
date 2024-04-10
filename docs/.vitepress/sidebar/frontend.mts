@@ -41,6 +41,10 @@ export default {
                 {
                     text: '浏览器加载原理',
                     link: '/front-end/js/render'
+                },
+                {
+                    text: 'SSO',
+                    link: '/front-end/js/SSO'
                 }
             ]
         }
