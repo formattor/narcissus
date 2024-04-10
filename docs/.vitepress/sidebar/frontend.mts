@@ -30,10 +30,33 @@ export default {
             ]
         }
     ],
+    '/front-end/js/': [
+        {
+            text: 'JS',
+            items: [
+                {
+                    text: 'ES6',
+                    link: '/front-end/js/es6'
+                },
+                {
+                    text: 'Event Loop',
+                    link: '/front-end/js/eventloop'
+                },
+                {
+                    text: '浏览器加载原理',
+                    link: '/front-end/js/render'
+                }
+            ]
+        }
+    ],
     '/front-end/micro-frontend/': [
         {
             text: 'Micro Frontend',
             items: [
+                {
+                    text: 'preface',
+                    link: '/front-end/micro-frontend/preface'
+                },
                 {
                     text: 'Iframe',
                     link: '/front-end/micro-frontend/iframe'
@@ -49,6 +72,14 @@ export default {
                 {
                     text: 'Wujie',
                     link: '/front-end/micro-frontend/wujie'
+                },
+                {
+                    text: 'EMP',
+                    link: '/front-end/micro-frontend/emp'
+                },
+                {
+                    text: 'Postscript',
+                    link: '/front-end/micro-frontend/postscript'
                 }
             ]
         }

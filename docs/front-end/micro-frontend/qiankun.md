@@ -1,107 +1,12 @@
-# 前言
-> Techniques, strategies and recipes for building a modern web app with multiple teams that can ship features independently.     
-[Micro-frontends.org](https://micro-frontends.org/)
-
-web发展历史
-
-![micro1.png](https://img2.imgtp.com/2024/04/08/onGfJhG1.png)
-
-微服务的思想诞生了微前端
-
-![micro2.png](https://img2.imgtp.com/2024/04/08/N8cUNw8L.png)
-
-## 微前端要解决的问题
-
-::: tip 应用的加载与切换
-
-监听路由
-
-应用入口
-
-应用加载
-::: 
-
-::: tip  应用的隔离与通信
-
-JS隔离
-
-CSS隔离
-
-应用通信
-::: 
-
-# iframe
-
-## 用法
-
-``` html
-<iframe 
-    id="iframe"
-    src="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe"
-    frameborder="0" 
-    width="100%" 
-    height="100%">
-</iframe>
-```
-
-## 介绍
-
-::: tip 优点
-
-1. JS隔离
-
-2. CSS隔离
-
-3. 配置方便
-
-:::
-
-::: danger 缺点
-
-1. URL不同步。刷新浏览器子应用路由丢失，后退前进按钮子应用无法使用。
-
-2. UI 不同步。Dialog无法在父容器内居中。
-
-3. 全局上下文完全隔离，内存变量不共享。
-
-4. 加载缓慢。每次子应用进入都是一次浏览器上下文重建、资源重新加载的过程。
-
-:::
-
-[Why not use iframe?](https://www.yuque.com/kuitos/gky7yw/gesexv)
-
-# single-spa
-
-single-spa解决了路由监听和获取资源的问题
-
-## 使用
-``` js
-// 注册微应用
-registerApplication(apps)
-// 开启微应用
-start()
-```
-
-``` js
-// 提供生命周期钩子
-bootstrap(app)
-mount(app)
-unmount(app)
-```
-
-挂载资源需要用户自己去处理，比如后来封装的systemjs,支持多个script加载
-
-# qiankun
-
-## 路由监听获取资源
+# 路由监听获取资源
 在single-spa的基础上进行了封装
 
-## 资源加载
+# 资源加载
 将single-spa的js entry替换为html entry
 
 将子应用打包出来HTML作为入口，主框架通过fetch html的方式获取子应用静态资源，将HTML document作为子节点塞到主框架容器中，减少了主应用接入成本，子应用打包不需要调整，解决子应用之间的样式隔离问题。
 
-## 样式隔离
+# 样式隔离
 
 通过主子应用之间的一些默认约定去规避冲突:不智能，旧项目不行
 
@@ -122,7 +27,7 @@ registerMicroApps({
 ```
 
 
-## JS隔离
+# JS隔离
 
 ::: details SnapshotSandbox
 
@@ -316,7 +221,7 @@ console.log(proxySandbox2.proxyWindow.city); // nanjing
 // 可以激活多个应用
 ```
 :::
-## 应用通信
+# 应用通信
 
 父应用
 ``` js
@@ -342,9 +247,9 @@ export async function mount(props: any) {
 }
 ```
 
-## 原理
+# 原理
 
-#### 父应用使用
+### 父应用使用
 
 ``` js
 const apps = [
@@ -367,7 +272,7 @@ registerMicroApps(apps)
 start()
 ```
 
-#### 注册微应用
+### 注册微应用
 
 ``` js
 // index.js
@@ -381,7 +286,7 @@ export const registerMicroApps = (apps, lifestyles) => {
 }
 ```
 
-#### 启动微应用
+### 启动微应用
 
 1. 启动
 
@@ -564,65 +469,3 @@ async function unmount(app) {
 }
 
 ```
-
-# wujie
-
-## 应用通信
-
-1. 子应用的js是存放在iframe中的，所以子应用就可以通过window.parent.variable的方式访问全局变量
-
-2.  父组件 
-    `:props={name:"zzz"}`
-    子组件
-     `window.$wujie.props.name`
-
-3. 事件中心
-
-``` js
-import {bus} from 'wujie'
-bus.$on('vue3',(data)=>{
-    console.log(data,我是主应用)
-})
-window.$wujie.bus.$emit('vue3','我是子应用')
-```
-
-
-# EMP
-
-webpack5 : Module Federation
-
-remote
-``` js
-const ModuleFederatedPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-// webpack.config.js
-new ModuleFederatedPlugin({
-    name: 'remote',
-    filename: 'remoteEntry.js',
-    exposes: {
-        './addList': './list.js'
-    }
-})
-```
-host
-``` js
-const ModuleFederatedPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-// webpack.config.js
-new ModuleFederatedPlugin({
-    name: 'host',
-    remotes: {
-        remote: 'remote@http://localhost:9001/remoteEntry.js'
-    }
-})
-```
-
-# 资源链接
-
-[iframe](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)
-
-[qiankun doc](https://qiankun.umijs.org/zh/guide)
-
-[wujie 动机](https://zhuanlan.zhihu.com/p/551206945)
-
-[wujie doc](https://wujie-micro.github.io/doc/guide/)
-
-[resource.git](https://github.com/formattor/Micro-Frontend)

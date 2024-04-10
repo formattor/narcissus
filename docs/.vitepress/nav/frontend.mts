@@ -4,38 +4,15 @@ export default {
         {
             text: 'HTML',
             collapsed: true,
-            items: [
-                {
-                    text: '基础',
-                    link: '/front-end/html/label'
-                },
-                {
-                    text: 'H5',
-                    link: '/front-end/html/html5'
-                }
-            ]
+            link: '/front-end/html/label'
         },
         {
             text: 'CSS',
-            items: [
-                {
-                    text: 'Animation',
-                    link: '/front-end/css/animation'
-                }
-            ]
+            link: '/front-end/css/animation'
         },
         {
             text: 'JS',
-            items: [
-                {
-                    text: '事件循环',
-                    link: '/front-end/js/eventloop'
-                },
-                {
-                    text: '浏览器渲染原理',
-                    link: '/front-end/js/render'
-                }
-            ]
+            link: 'front-end/js/es6'
         },
         {
             text: 'Vue',
@@ -52,7 +29,7 @@ export default {
         },
         {
             text: 'Micro frontend',
-            link: '/front-end/micro-frontend'
+            link: '/front-end/micro-frontend/preface'
         }
     ]
 }
