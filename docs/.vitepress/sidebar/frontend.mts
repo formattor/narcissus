@@ -11,6 +11,10 @@ export default {
                 {
                     text: 'HTML5',
                     link: '/front-end/html/html5'
+                },
+                {
+                    text: 'Canvas',
+                    link: '/front-end/html/canvas'
                 }
             ]
         }
