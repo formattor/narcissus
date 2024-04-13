@@ -17,6 +17,10 @@
 
     + vue2对数组不友好，劫持数组方法重写，修改数组length监听不到
 
+![vue2](https://img.qovv.cn/2024/04/14/661ab30bad6d4.png)
+
+![vue3](https://img.qovv.cn/2024/04/14/661ab3623ec3e.png)
+
 + VDOM性能提升
 
     + [静态标记](https://template-explorer.vuejs.org/)
