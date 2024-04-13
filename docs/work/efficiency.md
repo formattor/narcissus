@@ -5,6 +5,11 @@
 |--|--|
 |`shift + alt + 鼠标左键`|跨行同列选中|
 |`ctrl + D`|添加下一个同名内容|
+|`Ctrl + enter` | 行中换行 |
+|`alt + ↑`| 代码行向上移动 |
+|`ctrl + l`|选单行|
+|`alt + cursor`|多选光标所在位置|
+|`ctrl + 0`|定位文件|
 
 # Script
 
@@ -25,9 +30,9 @@
 
 1. 提升chrome下载速度
 
-chrome://flags -> parallel-downloading -> enable
+> chrome://flags -> parallel-downloading -> enable
 
-edge://flags -> parallel-downloading -> enable
+> edge://flags -> parallel-downloading -> enable
 
 # 软件
 
@@ -38,10 +43,10 @@ edge://flags -> parallel-downloading -> enable
 |次元城动漫|动漫播放|
 |OBS Studio|录屏|
 |typora|markdown编辑器|
-|draw.io|画图|
 |火柴|搜索|
 |UTools|工具|
 |向日葵|远程|
+|keycatOW|显示鼠标|
 
 # 浏览器插件
 
@@ -64,7 +69,13 @@ edge://flags -> parallel-downloading -> enable
 |Code Translate|翻译|hover|
 |GitHub Repositories|github仓库|
 |Live Server|html server|
-|Polacode-2022|截图|`ctrl + shift + p` |
+|Polacode|截图|`ctrl + shift + p` |
 |TONGYI Lingma|AI code|
 |Image preview|图片预览|
 |Dracula Official|主题|
+|Draw.io Integration|流程图|
+|Code Spell Checker|拼写检查|
+|material icon theme|file icon|
+|excel viewer|excel|
+
+
