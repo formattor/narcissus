@@ -1,5 +1,7 @@
 # Vue3 update
 
+[学习视频](https://www.bilibili.com/video/BV1dS4y1y7vd/?spm_id_from=333.999.0.0&vd_source=ba4cef6c44c3430b2a8024337b31925b)
+
 ::: info 链接
 
 [vue3](https://cn.vuejs.org/)
@@ -60,4 +62,84 @@ npm init vite@latest
 vue cli构建项目
 ```
 npm init vue@latest
+```
+
+::: tip npm run dev的过程
+
++ npm run dev
+
++ package.json:scripts:dev
+
++ vite:package.json:bin:vite:bin/vite.js
+
++ node_modules/.bin/
+
+    + vite // unix shell
+
+    + vite.cmd // windows
+
+    + vite.ps1 // 跨平台
+
++ 如果没有上述文件，回去npm的本地仓库找
+
++ 本地仓库没有就会去环境变量中找，否则报错
+
+:::
+
+# vue基础语法
+
+|语法|补充说明|
+|---|---|
+|插值|支持运算|
+|v-if|注释节点|
+|v-show|display:none;|
+|`@[variable]="someEvent";` `variable = 'click'`|动态绑定事件|
+|`@[variable].stop="someEvent"` `.prevent` `.once` ...|阻止冒泡 ...|
+|v-memo|搭配v-for使用，避免重新渲染|
+
+# virtual DOM
+
+通过js生成的AST节点树，操控js要比直接操控DOM快。
+
+# Diff算法
+
+[![Diff](https://img.qovv.cn/2024/04/17/661ea0f35504b.png)](https://img.qovv.cn/2024/04/17/661ea0f35504b.png)
+
+## 无key
+
+```
+// 三步
+patchUnkeyedChildren{
+    patch //对比节点
+    unmountChildren //删除节点
+    mountChildren //添加节点
+}
+```
+
+一一替换，多了添加，少了删除。
+
+不变的节点也会被替换，性能浪费。
+
+## 有key
+
+
+```
+// 五步
+patchKeyedChildren{
+    isSameVNodeType //前序对比算法，判断type和key是否相同，不同跳出循环进行尾序算法
+    isSameVNodeType //尾序对比算法，判断type和key是否相同
+    patch //多了新增
+    unmount //少了卸载
+
+    //无序
+    //构建新映射关系
+    //记录新节点在旧节点中的位置信息
+    //多余节点删掉
+    getSequence{ //最长递增子序列递增算法，贪心+二分
+        //数组索引都为1，从左到右一一对比
+        //左大右小索引不变，左小右大索引+1
+        //继续往右，找出比该值小的最大索引+1
+    }
+    // 不在子序列就移动，否则跳过
+}
 ```

@@ -2,8 +2,8 @@
 
 |script|function|
 |---|---|
-| `git restore --staged .`|取消暂存所有文件|
-| `git restore .`|取消暂存所有文件且撤销修改|
+|`git restore --staged .`|取消暂存所有文件|
+|`git restore .`|取消暂存所有文件且撤销修改|
 |`git rm -r --cached .`|清除git缓存|
 |`git remote add upstream url`|另一个远程仓库|
 |`git remote -v`|远程仓库信息|
