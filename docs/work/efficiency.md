@@ -1,6 +1,7 @@
 # 快捷键
 
 ## VS Code
+
 |快捷键|功能|
 |--|--|
 |`shift + alt + 鼠标左键`|跨行同列选中|
@@ -10,6 +11,8 @@
 |`ctrl + l`|选单行|
 |`alt + cursor`|多选光标所在位置|
 |`ctrl + 0`|定位文件|
+
+[快速生成代码片段](/front-end/vue/vue#ref)
 
 # Script
 

@@ -169,7 +169,7 @@ patchKeyedChildren{
 }
 ```
 
-# Ref
+# ref
 
 ::: details 配置用户代码片段
 
@@ -276,8 +276,70 @@ const obj = MyRef<string>('customRef-zys')
 
 设置->首选项->控制台->自定义格式化工具
 
-:::
+::: 
 
 ## 源码
 
 [ref](https://github.com/vuejs/core/blob/main/packages/reactivity/src/ref.ts)
+
+```
+ref(支持多重类型重载){
+  createRef(value,false)
+}
+
+createRef(value,shallow){
+  isRef(value) return value;
+  return RefImpl;
+}
+
+RefImpl {
+  isShallow?value:toReactive()
+}
+
+toReactive(value){
+  isObject(value)?reactive(value):value;
+}
+
+shallowRef(value){
+  createRef(value,true)
+}
+```
+
+# reactive
+
+`reactive<T extends object>`
+
+只支持引用类型
+
+读取赋值不需要`.value`
+
+不能直接赋值，否则会破坏响应式对象
+
+  + push加解构 `arr.push(...[1,2,3])`
+
+  + 添加数组对象作为属性
+
+## readonly
+
+`readonly(val)` 无法赋值，但val赋值会修改readonly对象
+
+## shallowReactive
+
+到第一层 `val.xxx = xxx`
+
+同样和reactive一起使用会被影响
+
+## 源码
+
+[reactive](https://github.com/vuejs/core/blob/main/packages/reactivity/src/reactive.ts)
+
+```
+reactive(value){
+  isReadonly return value;
+  return createReactiveObject(value)
+}
+
+createReactiveObject(value){
+  !isObject return value;
+}
+```

@@ -4,15 +4,15 @@
 
 ## 配置
 
-::: tip
-
 配置静态资源
 
 + 放入public `<image src="/narcissus/vitepress1.png" />`
 
 + [外链静态资源](/daily/web)
 
-:::
+配置页面路由跳转
+
+`[快速生成代码片段](/front-end/vue/vue#ref)`
 
 ## 使用
 
