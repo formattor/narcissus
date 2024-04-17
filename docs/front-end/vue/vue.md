@@ -2,6 +2,12 @@
 
 [学习视频](https://www.bilibili.com/video/BV1dS4y1y7vd/?spm_id_from=333.999.0.0&vd_source=ba4cef6c44c3430b2a8024337b31925b)
 
+[配套文档](https://xiaoman.blog.csdn.net/category_11618172_2.html)
+
+::: warning 链接
+[认识vue](https://xiaoman.blog.csdn.net/article/details/122768533)
+::: 
+
 ::: info 链接
 
 [vue3](https://cn.vuejs.org/)
@@ -39,6 +45,10 @@
 
 # config environment
 
+::: warning 链接
+[配置环境](https://xiaoman.blog.csdn.net/article/details/122769982)
+::: 
+
 [node.cn](https://nodejs.cn/)
 
 [node.en](https://nodejs.org/en/)
@@ -64,6 +74,10 @@ vue cli构建项目
 npm init vue@latest
 ```
 
+::: warning 链接
+[npm](https://xiaoman.blog.csdn.net/article/details/122771007)
+::: 
+
 ::: tip npm run dev的过程
 
 + npm run dev
@@ -88,6 +102,10 @@ npm init vue@latest
 
 # vue基础语法
 
+::: warning 链接
+[基础语法](https://xiaoman.blog.csdn.net/article/details/122773486)
+::: 
+
 |语法|补充说明|
 |---|---|
 |插值|支持运算|
@@ -103,9 +121,15 @@ npm init vue@latest
 
 # Diff算法
 
+::: warning 链接
+[diff](https://xiaoman.blog.csdn.net/article/details/122778560)
+::: 
+
 [![Diff](https://img.qovv.cn/2024/04/17/661ea0f35504b.png)](https://img.qovv.cn/2024/04/17/661ea0f35504b.png)
 
 ## 无key
+
+![01_diff.png](https://img.qovv.cn/2024/04/17/661fbaaaa6c36.png)
 
 ```
 // 三步
@@ -122,6 +146,7 @@ patchUnkeyedChildren{
 
 ## 有key
 
+![01_diffKey.png](https://img.qovv.cn/2024/04/17/661fbbde7f6d2.png)
 
 ```
 // 五步
@@ -143,3 +168,116 @@ patchKeyedChildren{
     // 不在子序列就移动，否则跳过
 }
 ```
+
+# Ref
+
+::: details 配置用户代码片段
+
+vs code :manage -> User Snippets -> vue.json
+
+```
+{
+	"Print to console": {
+		"prefix": "vue",
+		"body": [
+			"<template>",
+			"  <div>",
+			"",
+			"  </div>",
+			"</template>",
+			"",
+			"<script setup>",
+			"",
+			"</script>",
+			"",
+			"<style lang='less' scoped>",
+			"",
+			"</style>",
+			""
+		],
+		"description": "Log output to console"
+	}
+}
+
+```
+
+:::
+
+## ref
+
+```
+import { ref } from 'vue';
+import type {Ref} from 'vue'
+type Man = {
+  name:string
+}
+// const man = ref<Man>({name:'zys'})
+const man:Ref<Man> = ref({name:'zys'})
+
+const change = ()=>{
+  man.value.name = 'zzz'
+  console.log(man);
+}
+```
+
+```
+//获取dom元素
+<div ref="dom"></div>
+//与标签中绑定的ref名称保持一致
+const dom = ref<HTMLDivElement>();
+```
+
+## isRef
+
+`isRef(man) // true`
+
+## shallowRef
+
+浅层次的响应式,只响应到`.value.xxx`
+
+不能与ref同时使用，否则会变成深度响应式
+
+## triggerRef
+
+`triggerRef(man)` 会强制shallowRef的深度响应式更新
+
+## customRef
+
+::: details 自定义ref
+
+```
+function MyRef<T>(value:T){
+  let timer:any;
+  return customRef((track,trigger)=>{
+    return {
+      get(){
+        track()
+        return value
+      },
+      set(newValue){
+        clearTimeout(timer)
+        timer = setTimeout(()=>{
+          value = newValue
+          trigger()
+        },1000)
+      }
+    }
+  })
+}
+
+const obj = MyRef<string>('customRef-zys')
+
+```
+:::
+
+触发响应式如果调接口可以做防抖处理
+
+::: tip 浏览器方便观察ref对象
+
+设置->首选项->控制台->自定义格式化工具
+
+:::
+
+## 源码
+
+[ref](https://github.com/vuejs/core/blob/main/packages/reactivity/src/ref.ts)
