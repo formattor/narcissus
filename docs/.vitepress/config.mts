@@ -59,5 +59,10 @@ export default defineConfig({
     returnToTopLabel: '往上',
 
     // externalLinkIcon: true,
+
+    // carbonAds: {
+    //   code: 'your-carbon-code',
+    //   placement: 'your-carbon-placement'
+    // }
   }
 })

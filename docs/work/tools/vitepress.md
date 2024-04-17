@@ -1,8 +1,7 @@
-# vitepress
-
+::: warning vitepress
 [vitepress](https://vitepress.dev/zh/)
-
-## 配置
+:::
+# 配置
 
 配置静态资源
 
@@ -14,30 +13,30 @@
 
 `[快速生成代码片段](/front-end/vue/vue#ref)`
 
-## 使用
+# 使用
 
 [详情](https://vitepress.dev/guide/markdown)
 
-### 表格
+## 表格
 
 | Left          |      Middle   |  right     |
 | ------------- | :-----------: | ---------: |
 | ------------- | :-----------: | ---------: |
 | Left          |      Middle   |  right     |
 
-### emoji
+## emoji
 
 :tada: - `:tada:`
 
 [emojy list](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.mjs)
 
-### 目录结构
+## 目录结构
 
 `[[toc]]`
 
 [[toc]]
 
-### Card
+## Card
 
 ::: info
 This is an info box. [info]
@@ -59,7 +58,7 @@ This is a dangerous warning. [danger]
 This is a details block. [details]
 :::
 
-### 行高亮
+## 行高亮
       
 `js{4}`
 
@@ -76,7 +75,7 @@ export default {
 }
 ```
 
-### 行聚焦
+## 行聚焦
 
 ::: tip
 
@@ -96,7 +95,7 @@ export default {
 }
 ```
 
-### 行Diff
+## 行Diff
 
 在某一行添加 `// [!code --]` 或 `// [!code ++]` 注释将会为该行创建 diff，同时保留代码块的颜色。
 
@@ -111,7 +110,7 @@ export default {
 }
 ```
 
-### 行高亮,行警告
+## 行高亮,行警告
 
 在某一行添加 `// [!code warning]` 或 // `[!code error]` 注释将会为该行相应的着色。
 
@@ -126,7 +125,7 @@ export default {
 }
 ```
 
-### 行号
+## 行号
 
 ```ts {1}
 // 默认禁用行号 ts {1}
@@ -146,7 +145,7 @@ const line3 = 'This is line 3'
 const line4 = 'This is line 4'
 ```
 
-### 代码组
+## 代码组
 
 `::: code-group`
 
@@ -162,9 +161,137 @@ pnpm install vitepress
 
 :::
 
-## 一分钟建站
+# Runtime API
 
-### 本地搭建环境
+[Runtime API](https://vitepress.dev/reference/runtime-api)
+
+<script setup>
+import { useData,useRoute,useRouter } from 'vitepress'
+
+const { site, theme, page, frontmatter } = useData()
+
+const { path, data, component } = useRoute()
+
+const { route, go, onBeforeRouteChange, onBeforePageLoad, onAfterRouteChanged } = useRouter()
+
+</script>
+
+## useData
+
+```md
+<script setup>
+import { useData } from 'vitepress'
+
+const { theme, page, frontmatter } = useData()
+</script>
+
+## Results
+
+### Theme Data
+<pre>{{ theme }}</pre>
+
+### Page Data
+<pre>{{ page }}</pre>
+
+### Page Frontmatter
+<pre>{{ frontmatter }}</pre>
+```
+
+::: details Theme Data
+<pre>{{ theme }}</pre>
+:::
+
+::: details Page Data
+<pre>{{ page }}</pre>
+:::
+
+::: details Page Frontmatter
+<pre>{{ frontmatter }}</pre>
+:::
+
+## useRoute
+
+```md
+<script setup>
+import { useData } from 'vitepress'
+
+const { theme, page, frontmatter } = useData()
+</script>
+
+## Results
+
+### path
+<pre>{{ path }}</pre>
+
+### data
+<pre>{{ data }}</pre>
+
+### component
+<pre>{{ component }}</pre>
+```
+
+::: details path
+<pre>{{ path }}</pre>
+:::
+
+::: details data
+<pre>{{ data }}</pre>
+:::
+
+::: details component
+<pre>{{ component }}</pre>
+:::
+
+## useRouter
+
+```md
+<script setup>
+import { useRouter } from 'vitepress'
+
+const { route, go, onBeforeRouteChange, onBeforePageLoad, onAfterRouteChanged } = useRouter()
+</script>
+
+## Results
+
+### route
+<pre>{{ route }}</pre>
+
+### go
+<pre>{{ go }}</pre>
+
+### onBeforeRouteChange
+<pre>{{ onBeforeRouteChange }}</pre>
+
+### onBeforePageLoad
+<pre>{{ onBeforePageLoad }}</pre>
+
+### onAfterRouteChanged
+<pre>{{ onAfterRouteChanged }}</pre>
+```
+
+::: details route
+<pre>{{ route }}</pre>
+:::
+
+::: details go
+<pre>{{ go }}</pre>
+:::
+
+::: details onBeforeRouteChange
+<pre>{{ onBeforeRouteChange }}</pre>
+:::
+
+::: details onBeforePageLoad
+<pre>{{ onBeforePageLoad }}</pre>
+:::
+
+::: details onAfterRouteChanged
+<pre>{{ onAfterRouteChanged }}</pre>
+:::
+
+# 一分钟建站
+
+## 本地搭建环境
 
 1. 创建文件夹doc
 
@@ -192,7 +319,7 @@ npx vitepress init
 base: "/test/"
 ```
 
-### 远程仓库与部署
+## 远程仓库与部署
 
 5. 创建远程public仓库test
 

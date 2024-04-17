@@ -14,13 +14,12 @@ export default {
             link: '/daily/music'
         },
         {
-            text: '网站',
-            items: [
-                {
-                    text: 'web',
-                    link: '/daily/web'
-                }
-            ]
+            text: 'web',
+            link: '/daily/web'
+        },
+        {
+            text: 'experience',
+            link: '/daily/experience'
         }
     ]
 }
