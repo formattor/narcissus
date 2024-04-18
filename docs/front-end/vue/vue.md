@@ -343,3 +343,34 @@ createReactiveObject(value){
   !isObject return value;
 }
 ```
+
+# to
+
+> https://github.com/vuejs/core/blob/main/packages/reactivity/src/ref.ts
+
+## toRef
+
+`toRef(obj,key)` 只能作用于响应式对象，解构对象返回其中属性
+
+## toRefs
+
+``` js
+toRefs=<T extends object>(obj:T)=>{
+  const map:any = {}
+  for(let key in obj){
+    map[key] = toRef(obj,key)]
+  }
+}
+```
+
+## toRaw
+
+`toRaw(reactiveObj)` 变成原始对象
+
+通过属性`__v_raw`来获取原始值
+
+# 响应式原理
+
+// todo
+
+
