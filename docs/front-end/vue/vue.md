@@ -374,3 +374,34 @@ toRefs=<T extends object>(obj:T)=>{
 // todo
 
 
+# computed
+
+1. 选项式写法
+
+```
+const name = computed<string>(()=>{
+  get()=>{
+    return firstName.value + ' ' + lastName.value;
+  },
+  set(newVal)=>{
+
+  }
+})
+```
+
+2. 函数式写法
+
+```
+const name = computed(()=>{ return firstName.value + ' ' + lastName.value; })
+```
+
+name.value is `readyonly`
+
+<hr>
+
+场景：总价，搜索等
+
+## 源码
+
+> https://github.com/vuejs/core/blob/main/packages/reactivity/src/computed.ts
+

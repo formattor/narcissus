@@ -49,6 +49,21 @@ export default {
             ]
         }
     ],
+    '/front-end/design-pattern/': [
+        {
+            text: 'Design Pattern',
+            items: [
+                {
+                    text: 'singleton',
+                    link: '/front-end/design-pattern/singleton'
+                },
+                {
+                    text: 'strategy',
+                    link: '/front-end/design-pattern/strategy'
+                }
+            ]
+        }
+    ],
     '/front-end/micro-frontend/': [
         {
             text: 'Micro Frontend',

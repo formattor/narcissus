@@ -28,6 +28,10 @@ export default {
             link: '/front-end/taro/taro'
         },
         {
+            text: 'Design pattern',
+            link: '/front-end/design-pattern/singleton'
+        },
+        {
             text: 'Micro frontend',
             link: '/front-end/micro-frontend/preface'
         }
