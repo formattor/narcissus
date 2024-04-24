@@ -1,10 +1,16 @@
+所谓策略模式就是把变得部分`算法的使用`和不变的部分`算法的实现`分开
+
 # 无策略
 
+::: warning 缺陷
+ 
+ 1. 不符合单一职责原则
+ 2. 不好修改，添加level或修改salary倍数
+ 3. 复用性差
+
+:::
+
 ``` js
-// 缺陷
-// 1. 所有逻辑都包含在函数内
-// 2. 不好修改，添加level或修改salary倍数
-// 3. 复用性差
 var calculateBonus = function (salary, performanceLevel) {
     if (performanceLevel == 'S') {
         return salary * 4;
@@ -23,8 +29,10 @@ calculateBonus(3000, S);
 
 # 组合函数
 
+将计算各个薪资的方法写在外边
+
 ``` js
-// 将计算各个薪资的方法写在外边
+
 // 
 // 不过我觉得只解决了1
 var performanceS = function (salary) {
@@ -36,6 +44,7 @@ var performanceA = function (salary) {
 var performanceB = function (salary) {
     return salary * 2
 }
+
 var calculateBonus = function (salary, performanceLevel) {
     if (performanceLevel == 'S') {
         return performanceS(salary)
@@ -107,6 +116,8 @@ console.log(bonus.getSalary());
 ```
 
 # strategy-JS
+
+JS中实现策略模式更为简单，讲可变的策略封装成一个对象，以键值对的方法存储策略以及策略的算法。
 
 ``` js
 var strategies = {

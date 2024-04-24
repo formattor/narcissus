@@ -60,6 +60,14 @@ export default {
                 {
                     text: 'strategy',
                     link: '/front-end/design-pattern/strategy'
+                },
+                {
+                    text: 'proxy',
+                    link: '/front-end/design-pattern/proxy'
+                },
+                {
+                    text: 'subscribe',
+                    link: '/front-end/design-pattern/subscribe'
                 }
             ]
         }
