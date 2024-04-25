@@ -35,6 +35,10 @@ export default {
                     link: '/front-end/js/es6'
                 },
                 {
+                    text: 'WebAPI',
+                    link: '/front-end/js/webAPI'
+                },
+                {
                     text: 'Event Loop',
                     link: '/front-end/js/eventloop'
                 },
