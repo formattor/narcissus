@@ -7,8 +7,8 @@
 
 |链接|功能|
 |---|---|
-|[picui](https://picui.cn/upload)|静态资源托管|
-|[imgTP](https://www.imgtp.com/)|静态资源托管|
+|[yushi.icu](http://www.yushi.icu/)|静态资源托管|
+|[yushi.icu](http://47.116.165.184/)|静态资源托管|
 |[fococlipping](https://www.fococlipping.com)|抠图|
 |[框架语法对比](https://component-party.jason-liang.com/)|框架语法对比|
 

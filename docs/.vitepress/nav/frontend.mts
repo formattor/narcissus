@@ -15,17 +15,21 @@ export default {
             link: 'front-end/js/es6'
         },
         {
-            text: 'Vue',
+            text: 'tool',
             items: [
                 {
                     text: 'Vue',
                     link: '/front-end/vue/vue'
-                }
+                },
+                {
+                    text: 'Taro',
+                    link: '/front-end/taro/taro'
+                },
+                {
+                    text: 'Three',
+                    link: '/front-end/taro/taro'
+                },
             ]
-        },
-        {
-            text: 'Taro',
-            link: '/front-end/taro/taro'
         },
         {
             text: 'Design pattern',

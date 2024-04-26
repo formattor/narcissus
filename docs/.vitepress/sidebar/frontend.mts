@@ -53,6 +53,21 @@ export default {
             ]
         }
     ],
+    '/front-end/vue/': [
+        {
+            text: 'vue',
+            items: [
+                {
+                    text: 'vue start',
+                    link: '/front-end/vue/vue'
+                },
+                {
+                    text: 'vue base',
+                    link: '/front-end/vue/vue-base'
+                },
+            ]
+        }
+    ],
     '/front-end/design-pattern/': [
         {
             text: 'Design Pattern',
