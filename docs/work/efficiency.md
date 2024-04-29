@@ -12,7 +12,7 @@
 |`alt + cursor`|多选光标所在位置|
 |`ctrl + 0`|定位文件|
 
-[快速生成代码片段](/front-end/vue/vue#ref)
+[快速生成代码片段](/front-end/vue/vue-base#ref)
 
 # Script
 
@@ -62,6 +62,7 @@
 |鼠标手势|鼠标手势|
 |Adblock Plus|屏蔽广告|
 |FeHelper|前端开发助手|
+|Sider|AI|
 
 # VS Code插件
 

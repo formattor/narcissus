@@ -129,7 +129,7 @@ npm init vue@latest
 
 ## 无key
 
-![01_diff.png](https://img.qovv.cn/2024/04/17/661fbaaaa6c36.png)
+![01_diff.png](http://47.116.165.184/i/2024/04/26/662b5d7db7805.png)
 
 ```
 // 三步
