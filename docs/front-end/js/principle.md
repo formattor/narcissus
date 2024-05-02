@@ -1,3 +1,98 @@
+# 浏览器渲染原理
+
+网络：获取HTML等资源，产生渲染任务，传递给渲染主线程的消息队列。
+
+渲染：HTML解析、样式计算、布局、分层、绘制、分块、光栅化、画。
+
+::: tip 渲染过程
+
+1. HTML Parse
+
+html -> DOM & CSSOM
+
+预解析线程会预先下载外部的css资源
+
+预解析线程下载外部的js资源会阻塞主线程，因为js会改变DOM结构。
+
+2. 样式计算
+
+计算每个DOM节点的样式
+
+3. 布局
+
+确定每个节点的尺寸和位置
+
+4. 分层
+
+提高渲染效率
+
+5. 绘制
+
+生成绘制指令
+
+渲染主线程工作结束，其他线程工作。
+
+6. 分块
+
+将每一层都划分成小区域，提高渲染效率。
+
+7. 光栅化
+
+GPU将每一块变成位图
+
+8. 画
+
+将位图信息给GPU进程再给显卡进行绘制
+
+:::
+
+## 问题
+
+### reflow
+
+修改了DOM或CSSOM的结构 2
+
+### repaint
+
+没有改变位置属性 5
+
+### transform
+
+在最后一步执行 8
+
+
+# 单点登录
+
+## Session + Cookie 模式
+
+![SSO](https://img.qovv.cn/2024/04/10/66167418e51e7.png)
+
+::: warning 劣势
+
++ 很大的应用，认证中心负载压力大
+
++ 子系统扩容，认证中心也要扩容，成本大
+
+:::
+
+## Token 模式
+
+![SSO2](https://img2.imgtp.com/2024/04/10/ZroR3Oyh.png)
+
+::: info
+
++ 无需认证中心认证
+
++ 失去了对用户的绝对控制
+
+:::
+
+## Token + Refresh Token 模式
+
+![SSO3.png](https://img2.imgtp.com/2024/04/10/N1C8pBRN.png)
+
+![SSO4.png](https://img2.imgtp.com/2024/04/10/I9MDnxd3.png)
+
 # 事件循环
 
 [浏览器进程和线程](https://fe.duyiedu.com/p/t_pc/course_pc_detail/camp_pro/course_2VKbErGXkTSzvbl9aQ9HgndEtIz)

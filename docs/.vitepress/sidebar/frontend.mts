@@ -39,16 +39,12 @@ export default {
                     link: '/front-end/js/webAPI'
                 },
                 {
-                    text: 'Event Loop',
-                    link: '/front-end/js/eventloop'
+                    text: 'Principle',
+                    link: '/front-end/js/principle'
                 },
                 {
-                    text: '浏览器加载原理',
-                    link: '/front-end/js/render'
-                },
-                {
-                    text: 'SSO',
-                    link: '/front-end/js/SSO'
+                    text: 'Wheels',
+                    link: '/front-end/js/wheels'
                 }
             ]
         }

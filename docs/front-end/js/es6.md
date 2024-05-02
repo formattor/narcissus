@@ -12,7 +12,7 @@
 
 Reflect和proxy的参数是对应的，可以在proxy中使用Reflect
 
-```
+``` js
 new Proxy(obj, {
   set(...args) {
     return Reflect.set(...args)
@@ -27,5 +27,4 @@ new Proxy(obj, {
     return Reflect.has(...args);
   }
 }
-
 ```
