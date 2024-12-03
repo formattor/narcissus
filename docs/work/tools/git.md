@@ -1,6 +1,6 @@
 # git config
 
-::: tip
+```
 
 git config --global user.name "Your Name"
 
@@ -8,9 +8,9 @@ git config --global user.email "email@example.com"
 
 git config --list
 
-:::
+```
 
-## Secure Shell (SSH)
+#### Secure Shell (SSH)
 
 ```
 ssh-keygen -t rsa -C  "email"
