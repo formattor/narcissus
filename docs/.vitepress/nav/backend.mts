@@ -8,6 +8,10 @@ export default {
         {
             text: 'EF6',
             link: '/back-end/EF6'
+        },
+        {
+            text: 'NestJS',
+            link: '/back-end/NestJS'
         }
     ]
 }
