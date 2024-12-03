@@ -1,5 +1,31 @@
 # git config
 
+::: tip
+
+git config --global user.name "Your Name"
+
+git config --global user.email "email@example.com"
+
+git config --list
+
+:::
+
+## Secure Shell (SSH)
+
+```
+ssh-keygen -t rsa -C  "email"
+
+```
+
+将生成的.pub文件添加入github->setting->SSH and GPG keys
+
+```
+// 验证
+
+ssh -T git@github.com
+
+```
+
 # git script
 
 |script|function|
