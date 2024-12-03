@@ -9,7 +9,8 @@ export default {
                 { text: 'VitePress', link: '/work/tools/vitepress' },
                 { text: 'Git', link: '/work/tools/git' },
                 { text: 'SQL', link: '/work/tools/sql' },
-                { text: 'Linux', link: '/work/tools/linux' }
+                { text: 'Linux', link: '/work/tools/linux' },
+                { text: 'Node', link: '/work/tools/node' }
             ]
         },
         { text: 'Team', link: '/work/team' },
